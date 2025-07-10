@@ -1,0 +1,377 @@
+/* Additional content script styles for Pixel-Perfect Image Overlay Tool */
+
+/* Ensure overlay container doesn't interfere with page */
+#pixel-overlay-container {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Overlay images should be interactive */
+#pixel-overlay-container img {
+  pointer-events: auto !important;
+  cursor: move !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Panel styling with high specificity to override page styles */
+#pixel-overlay-panel {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  width: 300px !important;
+  background: white !important;
+  border: 1px solid #ccc !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-size: 14px !important;
+  z-index: 1000000 !important;
+  pointer-events: auto !important;
+  max-height: 80vh !important;
+  overflow: hidden !important;
+}
+
+/* Panel header */
+#pixel-overlay-panel .panel-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 12px 16px !important;
+  background: #f8f9fa !important;
+  border-bottom: 1px solid #e9ecef !important;
+  border-radius: 8px 8px 0 0 !important;
+  cursor: move !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+#pixel-overlay-panel .panel-title {
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin: 0 !important;
+}
+
+#pixel-overlay-panel .panel-controls button {
+  background: none !important;
+  border: none !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  margin-left: 4px !important;
+  color: #666 !important;
+}
+
+#pixel-overlay-panel .panel-controls button:hover {
+  background: #e9ecef !important;
+}
+
+/* Panel content */
+#pixel-overlay-panel .panel-content {
+  padding: 16px !important;
+  max-height: 500px !important;
+  overflow-y: auto !important;
+  background: white !important;
+}
+
+/* Upload section */
+#pixel-overlay-panel .upload-section {
+  margin-bottom: 16px !important;
+}
+
+#pixel-overlay-panel .upload-btn {
+  width: 100% !important;
+  padding: 8px 12px !important;
+  background: #007bff !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  margin-bottom: 8px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+#pixel-overlay-panel .upload-btn:hover {
+  background: #0056b3 !important;
+}
+
+#pixel-overlay-panel .drag-drop-area {
+  border: 2px dashed #ccc !important;
+  border-radius: 4px !important;
+  padding: 20px !important;
+  text-align: center !important;
+  color: #666 !important;
+  background: #f8f9fa !important;
+  transition: all 0.2s !important;
+  font-size: 13px !important;
+}
+
+#pixel-overlay-panel .drag-drop-area.dragover {
+  border-color: #007bff !important;
+  background: #e3f2fd !important;
+}
+
+/* Overlay list */
+#pixel-overlay-panel .overlay-list {
+  margin-bottom: 16px !important;
+}
+
+#pixel-overlay-panel .overlay-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 8px !important;
+  border: 1px solid #e9ecef !important;
+  border-radius: 4px !important;
+  margin-bottom: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+  background: white !important;
+}
+
+#pixel-overlay-panel .overlay-item:hover {
+  background: #f8f9fa !important;
+}
+
+#pixel-overlay-panel .overlay-item.selected {
+  border-color: #007bff !important;
+  background: #e3f2fd !important;
+}
+
+#pixel-overlay-panel .overlay-thumbnail {
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: cover !important;
+  border-radius: 4px !important;
+  margin-right: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+#pixel-overlay-panel .overlay-info {
+  flex: 1 !important;
+}
+
+#pixel-overlay-panel .overlay-name {
+  font-weight: 500 !important;
+  margin-bottom: 2px !important;
+  font-size: 13px !important;
+  color: #333 !important;
+}
+
+#pixel-overlay-panel .overlay-size {
+  font-size: 12px !important;
+  color: #666 !important;
+}
+
+/* Controls */
+#pixel-overlay-panel .control-group {
+  margin-bottom: 12px !important;
+}
+
+#pixel-overlay-panel .control-group label {
+  display: block !important;
+  margin-bottom: 4px !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  color: #333 !important;
+}
+
+#pixel-overlay-panel .control-group input[type="range"] {
+  width: 100% !important;
+  margin-bottom: 4px !important;
+  height: 6px !important;
+  border-radius: 3px !important;
+  background: #e9ecef !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+}
+
+#pixel-overlay-panel .control-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50% !important;
+  background: #007bff !important;
+  cursor: pointer !important;
+}
+
+#pixel-overlay-panel .control-group input[type="number"] {
+  width: 60px !important;
+  padding: 4px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  font-size: 13px !important;
+  text-align: center !important;
+}
+
+#pixel-overlay-panel .control-group button {
+  padding: 4px 8px !important;
+  margin: 2px !important;
+  background: #f8f9fa !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  color: #333 !important;
+}
+
+#pixel-overlay-panel .control-group button:hover {
+  background: #e9ecef !important;
+}
+
+#pixel-overlay-panel .delete-btn {
+  background: #dc3545 !important;
+  color: white !important;
+  border-color: #dc3545 !important;
+  font-weight: 500 !important;
+}
+
+#pixel-overlay-panel .delete-btn:hover {
+  background: #c82333 !important;
+}
+
+/* Global controls */
+#pixel-overlay-panel .global-controls {
+  display: flex !important;
+  gap: 8px !important;
+  margin-top: 16px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid #e9ecef !important;
+}
+
+#pixel-overlay-panel .global-controls button {
+  flex: 1 !important;
+  padding: 8px 12px !important;
+  background: #6c757d !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+#pixel-overlay-panel .global-controls button:hover {
+  background: #5a6268 !important;
+}
+
+/* No overlays message */
+#pixel-overlay-panel .no-overlays {
+  text-align: center !important;
+  color: #666 !important;
+  font-style: italic !important;
+  padding: 20px !important;
+  font-size: 13px !important;
+}
+
+/* Minimized state */
+#pixel-overlay-panel.minimized .panel-content {
+  display: none !important;
+}
+
+#pixel-overlay-panel.minimized {
+  width: auto !important;
+  min-width: 200px !important;
+}
+
+/* Ensure inputs and buttons work properly */
+#pixel-overlay-panel input,
+#pixel-overlay-panel button,
+#pixel-overlay-panel select {
+  font-family: inherit !important;
+  box-sizing: border-box !important;
+}
+
+/* Prevent text selection on draggable elements */
+#pixel-overlay-panel .panel-header,
+#pixel-overlay-panel .overlay-item {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Scrollbar styling */
+#pixel-overlay-panel .panel-content::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+#pixel-overlay-panel .panel-content::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+  border-radius: 3px !important;
+}
+
+#pixel-overlay-panel .panel-content::-webkit-scrollbar-thumb {
+  background: #c1c1c1 !important;
+  border-radius: 3px !important;
+}
+
+#pixel-overlay-panel .panel-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8 !important;
+}
+
+/* Dimension input styles */
+#pixel-overlay-panel .dimension-inputs {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+#pixel-overlay-panel .dimension-input {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+#pixel-overlay-panel .dimension-input span {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #666 !important;
+  min-width: 15px !important;
+}
+
+#pixel-overlay-panel .dimension-input input {
+  width: 50px !important;
+  padding: 4px !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  text-align: center !important;
+}
+
+#pixel-overlay-panel #lock-aspect {
+  padding: 4px 6px !important;
+  font-size: 12px !important;
+  background: #f8f9fa !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+#pixel-overlay-panel #lock-aspect:hover {
+  background: #e9ecef !important;
+}
+
+#pixel-overlay-panel #lock-aspect.locked {
+  background: #007bff !important;
+  color: white !important;
+  border-color: #007bff !important;
+} 

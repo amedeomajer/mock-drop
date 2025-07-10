@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Pixel-Perfect Image Overlay Tool",
+  "version": "1.0.0",
+  "description": "Overlay design images on webpages for pixel-perfect layout comparison",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles/content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Pixel-Perfect Overlay Tool"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html", "styles/*", "assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+} 

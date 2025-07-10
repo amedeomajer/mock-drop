@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel-Perfect Image Overlay Tool</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <h1>Pixel-Perfect Overlay Tool</h1>
+      <p>Overlay design images on webpages for pixel-perfect layout comparison</p>
+    </div>
+    
+    <div class="content">
+      <div class="status-section">
+        <div class="status-indicator" id="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-text">Checking page...</span>
+        </div>
+      </div>
+      
+      <div class="actions">
+        <button id="activate-btn" class="primary-btn">
+          <span class="btn-icon">🎯</span>
+          Activate Overlay Tool
+        </button>
+        
+        <button id="deactivate-btn" class="secondary-btn" style="display: none;">
+          <span class="btn-icon">⏹️</span>
+          Deactivate Tool
+        </button>
+      </div>
+      
+      <div class="info-section">
+        <h3>How to use:</h3>
+        <ul>
+          <li>Click "Activate Overlay Tool" to start</li>
+          <li>Upload design images via the floating panel</li>
+          <li>Drag images to position them over the webpage</li>
+          <li>Adjust opacity, rotation, and flip as needed</li>
+          <li>Use arrow keys for precise positioning</li>
+        </ul>
+      </div>
+      
+      <div class="shortcuts">
+        <h3>Keyboard Shortcuts:</h3>
+        <div class="shortcut-grid">
+          <div class="shortcut">
+            <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd>
+            <span>Move selected overlay</span>
+          </div>
+          <div class="shortcut">
+            <kbd>Shift</kbd> + <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd>
+            <span>Move by 10px</span>
+          </div>
+          <div class="shortcut">
+            <kbd>+</kbd> / <kbd>-</kbd>
+            <span>Scale overlay up/down</span>
+          </div>
+          <div class="shortcut">
+            <kbd>Delete</kbd> / <kbd>Backspace</kbd>
+            <span>Delete selected overlay</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>Perfect for comparing live websites with design mockups!</p>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
