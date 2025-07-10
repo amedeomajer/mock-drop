@@ -1,6 +1,6 @@
 # MockDrop image overlay
 
-A Chrome Extension that allows developers to overlay design images on webpages for pixel-perfect layout comparison. Perfect for comparing live websites with design mockups!
+A ⚠️ Vibe Coded ⚠️ Chrome Extension that allows developers to overlay design images on webpages for pixel-perfect layout comparison. Perfect for comparing live websites with design mockups!
 
 ## Features
 
